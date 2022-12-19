@@ -63,14 +63,3 @@ int get_random_number(int start, int end)
 {
     return start + (rand() % end);
 }
-
-//void print_array(int array[][6], int height, int width)
-//{
-//    for(int i = 0; i < height; i++)
-//    {
-//        for(int j = 0; j < width; j ++){
-//            cout << array[i][j] << " ";
-//        }
-//        cout << endl;
-//    }
-//}
