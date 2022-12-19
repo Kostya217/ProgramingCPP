@@ -13,10 +13,11 @@ void print_array(T(&array)[N][M]);
 template<size_t N, size_t M >
 void fill_array(int(&array)[N][M]);
 
+// Отримання суми чисел із верхнього та нижнього трикутника
 template<size_t N, size_t M >
 int get_sum_triangles(int(&array)[N][M]);
 
-// Task B variant A
+// Завдання Б варіант А
 int main()
 {
     int array[10][9];
@@ -64,8 +65,10 @@ void fill_array(int(&array)[N][M])
 template<size_t height, size_t width >
 int get_sum_triangles(int(&array)[height][width])
 {
-    // Sum elements variant A
     int sum = 0;
+    // Цикл для отримання суми всіх чисел із верхнього трикутника
+    // В якості відрізання непотрібних елементів використовується і
+    // Для лівого края формула j = i, для правого width - i
     for(int i = 0; i < (int)height/2; i++) // 0 < i < 5
     {
         for(int j = i; j < (int)width - i; j ++)
@@ -73,6 +76,9 @@ int get_sum_triangles(int(&array)[height][width])
             sum += array[i][j];
         }
     }
+    // Цикл для отримання суми всіх чисел із нижнього трикутника
+    // В якості відрізання непотрібних елементів використовується і
+    // Для лівого края формула j = height - i - 1, для правого width - height + i + 1
     for(int i = height/2; i < (int)height; i++) // 5 < i < 10
     {
         for(int j = height - i - 1; j < (int)width - (int)height + i + 1; j ++)
