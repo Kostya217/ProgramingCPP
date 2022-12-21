@@ -57,5 +57,3 @@ void printSystemBlockByPrice(SystemBlock (&array)[length], float price)
         }
     }
 }
-
-
